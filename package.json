@@ -5,21 +5,26 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "dev": "node ./server.js",
+    "start": "cross-env NODE_ENV=production node ./server.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@remix-run/express": "^2.16.3",
     "@remix-run/node": "^2.16.3",
     "@remix-run/react": "^2.16.3",
-    "@remix-run/serve": "^2.16.3",
+    "axios": "^1.8.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.21.2",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.16.3",
+    "@types/axios": "^0.9.36",
+    "@types/express": "^5.0.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
